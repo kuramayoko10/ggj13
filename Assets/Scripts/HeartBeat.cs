@@ -83,7 +83,8 @@ public class HeartBeat : MonoBehaviour {
                 audio.PlayOneShot(clipToPlay);
 
                 trackedTime = -audioTime;
-
+				player = GetComponent<PlayerMovement>();
+				interval = player.getDelta();
             }
 
         }

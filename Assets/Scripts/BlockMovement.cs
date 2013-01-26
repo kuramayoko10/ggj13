@@ -17,7 +17,7 @@ public class BlockMovement : MonoBehaviour {
 
     // The interval of time (in seconds) that the sound will be played.
 		
-	float interval;
+	float interval = 3.0f;
 
     // The sound itself.
 
@@ -55,7 +55,7 @@ public class BlockMovement : MonoBehaviour {
 	Vector3 initialPosition;
 	public bool ReturnInitPosition = false;
 	bool state = false;
-	float audioTime = 1.097f, tempoPrimeiraBatida = 0.5f;
+	float audioTime = 1.097f, tempoPrimeiraBatida = 0.0f;
 
     // Update is called once per frame
 
@@ -80,6 +80,8 @@ public class BlockMovement : MonoBehaviour {
 				{
 					state = !state;
 					trackedTime = 0.0f;
+					GameObject playerInstance = GameObject.Find("Player");
+					interval = playerInstance.transform.GetComponent<PlayerMovement>().getDelta();
 				}
             }
 

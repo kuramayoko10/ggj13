@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	private CharacterMotor motor;
 	private PlatformInputController pic;
-	private float boost;
+	private float boost = 3.0f;
 	
 	public float tempDelta;
 	
@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		motor = gameObject.GetComponent<CharacterMotor>();
 		pic = gameObject.GetComponent<PlatformInputController>();
-		boost = 1.0f;
+		boost = 3.0f;
 	}
 	
 	// Update is called once per frame
@@ -22,22 +22,25 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if(pic.directionVector.x != 0)
 		{
-			boost += 0.5f;
+			boost -= 0.4f*Time.deltaTime;
 		}
-		else if(boost > 1.0f)
+		else if(boost < 3.0f)
 		{
-			boost -= 2f;	
+			boost += 0.4f*Time.deltaTime;	
 		}
 		
-		if(boost <= 1.0)
+		if(boost <= 1.0f)
 			boost = 1.0f;
+		if(boost >= 3.0f)
+			boost = 3.0f;
 		
 		getDelta();
 	}
 	
 	public float getDelta()
 	{
-		tempDelta = 1.0f/boost;
-		return 1.0f/boost;
+		//tempDelta = 1.0f/boost;
+		tempDelta = boost;
+		return boost;
 	}
 }
