@@ -44,8 +44,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraBehavior.cs" />
      <Compile Include="Assets\Scripts\Player\CharacterMotor.cs" />
-     <Compile Include="Assets\Scripts\Player\PlatformInputControlle.cs" />
+     <Compile Include="Assets\Scripts\Player\PlatformInputController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
