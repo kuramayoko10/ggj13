@@ -20,15 +20,17 @@ public class BlockMovement : MonoBehaviour {
 
     // Use this for initialization
 	//public GameObject defaultPlayer = null;
-	public HeartBeat defaultBeat = null;
+	HeartBeat defaultBeat = null;
     void Start () {
+		
+		defaultBeat = (HeartBeat) GameObject.Find("Player").GetComponent("HeartBeat");
 		initialPosition = transform.position;	
 		target += transform.position;
 	}
 
 	public Vector3 target;
 	Vector3 initialPosition;
-	public bool ReturnInitPosition = false;
+	public bool ReturnInitPosition = true;
 	bool state = false, invert = false;
 	float tempoPrimeiraBatida = 0.0f;
 
