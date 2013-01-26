@@ -14,6 +14,7 @@ public class PlatformInputController : MonoBehaviour
     public float maxRotationSpeed = 360.0f;
 
     private CharacterMotor motor;
+	public Vector3 directionVector;
 
     // Use this for initialization
     void Awake()
@@ -24,8 +25,10 @@ public class PlatformInputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Get the input vector from keyboard or analog stick
-        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        // Get the input vector from kayboard or analog stick
+        directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+		//removed Vector3 declaration
+		//removed  Input.GetAxis("Vertical")
 
         if (directionVector != Vector3.zero)
         {

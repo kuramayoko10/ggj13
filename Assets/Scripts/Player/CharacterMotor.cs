@@ -120,7 +120,8 @@ public class CharacterMotor : MonoBehaviour
     }
 
     public CharacterMotorJumping jumping = new CharacterMotorJumping();
-
+	
+	/*******************/
     [System.Serializable]
     public class CharacterMotorMovingPlatform
     {
@@ -157,6 +158,7 @@ public class CharacterMotor : MonoBehaviour
     }
 
     public CharacterMotorMovingPlatform movingPlatform = new CharacterMotorMovingPlatform();
+	/*******************/
 
     [System.Serializable]
     public class CharacterMotorSliding

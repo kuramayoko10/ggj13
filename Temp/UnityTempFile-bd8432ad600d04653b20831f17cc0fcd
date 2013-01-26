@@ -31,4 +31,5 @@
 -define:UNITY_EDITOR
 -define:UNITY_TEAM_LICENSE
 'Assets/Scripts/Player/CharacterMotor.cs'
-'Assets/Scripts/Player/PlatformInputController.cs'
+'Assets/Scripts/Player/PlatformInputControlle.cs'
+'Assets/Scripts/Player/PlayerMovement.cs'

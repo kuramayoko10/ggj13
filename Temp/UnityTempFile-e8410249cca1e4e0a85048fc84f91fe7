@@ -1,11 +1,14 @@
 -debug
 -target:library
 -nowarn:0169
--out:'Temp/Assembly-CSharp.dll'
+-out:'Temp/Assembly-CSharp-Editor.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
 -r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
 -r:'Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll'
--r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
+-r:'Library/ScriptAssemblies/Assembly-CSharp.dll'
+-r:'Library/ScriptAssemblies/Assembly-UnityScript.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll'
 -define:UNITY_STANDALONE
 -define:ENABLE_MICROPHONE
 -define:ENABLE_IMAGEEFFECTS
@@ -30,5 +33,8 @@
 -define:ENABLE_PROFILER
 -define:UNITY_EDITOR
 -define:UNITY_TEAM_LICENSE
-'Assets/Scripts/Player/CharacterMotor.cs'
-'Assets/Scripts/Player/PlatformInputController.cs'
+'Assets/Editor/Water (Pro Only)/Water4/GerstnerDisplaceEditor.cs'
+'Assets/Editor/Water (Pro Only)/Water4/PlanarReflectionEditor.cs'
+'Assets/Editor/Water (Pro Only)/Water4/SpecularLightingEditor.cs'
+'Assets/Editor/Water (Pro Only)/Water4/WaterBaseEditor.cs'
+'Assets/Editor/Water (Pro Only)/Water4/WaterEditorUtility.cs'
