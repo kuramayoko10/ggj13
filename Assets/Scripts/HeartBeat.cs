@@ -36,15 +36,16 @@ public class HeartBeat : MonoBehaviour {
     
 
     // The amount of time that has passed since the last initial playback of the sound.
-	float audioTime = 1.097f;
-    private float trackedTime = 0.0f;
+	public float audioTime = 1.097f;
+    public float trackedTime = 0.0f;
 
     
 
     // Tracks to see if we've played this at startup.
 
     private bool playedAtStartup = false, beat = false;
-
+	
+	private bool stateBeating = false;
     
 
     // Use this for initialization
@@ -71,24 +72,37 @@ public class HeartBeat : MonoBehaviour {
     void Update () {
 
         if (!disableScript) {
-
             trackedTime += Time.deltaTime;
 
             // Check to see that the proper amount of time has passed
-
-            if (trackedTime >= interval) {
-
-                // Play the sound, reset the timer
-
-                audio.PlayOneShot(clipToPlay);
-
-                trackedTime = -audioTime;
-				player = GetComponent<PlayerMovement>();
-				interval = player.getDelta();
-            }
+            if (!stateBeating && trackedTime >= interval) {
+				startBeat ();                                		
+            } else if(stateBeating && trackedTime >= audioTime){
+				stopBeat();
+			}
 
         }
 
     }
+	void startBeat(){
+		// Play the sound, reset the timer
+        audio.PlayOneShot(clipToPlay);
+		trackedTime -= interval;
+		stateBeating = true;
+		trackedTime = 0.0f;
+
+	}
+	void stopBeat(){
+		player = GetComponent<PlayerMovement>();
+		interval = player.getDelta();
+		stateBeating = false;
+		trackedTime = 0.0f;
+	}
+	public float getTrackTime(){
+		return trackedTime;
+	}
+	public bool isStateBeating(){
+		return stateBeating;
+	}
 
 }
