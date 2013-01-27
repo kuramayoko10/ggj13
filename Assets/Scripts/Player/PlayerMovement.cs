@@ -64,31 +64,7 @@ public class PlayerMovement : MonoBehaviour
 			{
 				pointLight2.intensity = 1.1f;
 			}
-		}
-
-		if(heart.isStateBeating())
-		{
-			if(timeElapsed == 0)
-			{
-				spotLeft.intensity = 0.9f;
-				spotRight.intensity = 0.9f;
-			}
-			else if(timeElapsed >= 0.4)
-			{
-				spotLeft.intensity = 0.1f;
-				spotRight.intensity = 0.1f;
-				timeElapsed = -Time.deltaTime;
-			}
-			
-			timeElapsed += Time.deltaTime;
-		}
-		else
-		{
-			spotLeft.intensity = 0.0f;
-			spotRight.intensity = 0.0f;
-		}
-
-	}
+		}	}
 	
 	public float getDelta()
 	{

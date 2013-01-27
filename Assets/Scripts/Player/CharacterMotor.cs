@@ -364,13 +364,13 @@ public class CharacterMotor : MonoBehaviour
             }
         }
 
-        if(useFixedUpdate)
+        if(useFixedUpdate && !GetComponent<Death>().isDead)
             UpdateFunction();
     }
 
     void Update()
     {
-        if(!useFixedUpdate)
+        if(!useFixedUpdate && !GetComponent<Death>().isDead)
             UpdateFunction();
     }
 
