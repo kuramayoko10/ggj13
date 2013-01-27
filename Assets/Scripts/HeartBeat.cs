@@ -24,6 +24,7 @@ public class HeartBeat : MonoBehaviour {
     // The sound itself.
 
     public AudioClip clipToPlay;
+	public AnimationClip aClip = null;
 
     
 
@@ -54,7 +55,8 @@ public class HeartBeat : MonoBehaviour {
 
 		player = GetComponent<PlayerMovement>();
 		interval = player.getDelta();
-        
+		startBeat();
+		animation.AddClip(aClip,"lighAnimation");
 		if (interval < 1.0f) { // Make sure the interval isn't 0, or we'll be constantly playing the sound!
 
             Debug.LogError("Interval base must be at least 1.0!");
@@ -86,7 +88,8 @@ public class HeartBeat : MonoBehaviour {
     }
 	void startBeat(){
 		// Play the sound, reset the timer
-        audio.PlayOneShot(clipToPlay);
+        audio.PlayOneShot(clipToPlay);		
+		animation.Play();
 		trackedTime -= interval;
 		stateBeating = true;
 		trackedTime = 0.0f;

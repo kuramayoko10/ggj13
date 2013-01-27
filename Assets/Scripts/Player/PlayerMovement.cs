@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 	private PlatformInputController pic;
 	private HeartBeat heart;
 	
-	private float boost = 3.0f;
+	private float boost = 1.0f;
 	private float sign = 1f;
 	
 	public Light pointLight2, pointLight1;
@@ -48,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
 			boost = 3.0f;
 		else //Adjust the brightness
 		{
-			pointLight2.range += sign*boost*0.0006f;
-			pointLight2.intensity += sign*boost*0.0000002f;
+			pointLight2.range += sign*boost*0.06f;
+			pointLight2.intensity += sign*boost*0.02f;
 			
 			if(pointLight2.range <= 8)
 			{
