@@ -12,8 +12,13 @@ public class Death : MonoBehaviour
 	{
 		deathParticles.Play();
 		
-		mesh = gameObject.GetComponent<MeshRenderer>();
-		mesh.enabled = false;
+		//mesh = gameObject.GetComponent<MeshRenderer>();
+		//mesh.enabled = false;
+		
+		GameObject model = GameObject.Find("Bubble2");
+		
+		Destroy(model);
+		
 		isDead = true;
 	}
 
