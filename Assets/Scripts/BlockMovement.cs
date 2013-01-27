@@ -32,7 +32,7 @@ public class BlockMovement : MonoBehaviour {
 	Vector3 initialPosition;
 	public bool ReturnInitPosition = true;
 	bool state = false, invert = false;
-	float tempoPrimeiraBatida = 0.0f;
+	public float tempoPrimeiraBatida = 0.0f;
 
     // Update is called once per frame
 
