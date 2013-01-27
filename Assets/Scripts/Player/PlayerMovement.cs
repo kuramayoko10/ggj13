@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 	private float sign = 1f;
 	
 	public Light pointLight2, pointLight1;
-	public Light spotLeft, spotRight;
 	
 	public float tempDelta;
 	private float timeElapsed = 0f;
@@ -22,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 		motor = gameObject.GetComponent<CharacterMotor>();
 		pic = gameObject.GetComponent<PlatformInputController>();
 		heart = GameObject.Find ("Player").GetComponent<HeartBeat>();
+		
+		GameObject.Find("Spawn Particles").GetComponent<ParticleSystem>().Play(true);
 		
 		boost = 3.0f;
 	}
